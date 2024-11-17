@@ -1,0 +1,54 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:model="clr-namespace:CadastroEventos.Models"
+             x:Class="CadastroEventos.Views.ResumoEvento"
+             BackgroundColor="{DynamicResource PageBackgroundColor}">
+
+    <ContentPage.BindingContext>
+        <model:Evento />
+    </ContentPage.BindingContext>
+
+    <ScrollView>
+        <VerticalStackLayout VerticalOptions="Center"
+                     HorizontalOptions="Center">
+
+            <Label Text="Resumo"
+                   Margin="10"
+                   FontFamily="PoiretOne"
+                   FontSize="50"
+                   TextColor="#f6c467"
+                   HorizontalOptions="Center"/>
+
+            <Frame Margin="10">
+                <VerticalStackLayout Padding="50"
+                                     Spacing="10">
+
+                    <Label Text="Nome do Evento:"  TextColor="#f6c467"/>
+                    <Label Text="{Binding Nome}"/>
+
+                    <Label Text="Data de Início:" TextColor="#f6c467" />
+                    <Label Text="{Binding DataInicio, StringFormat='{0:dd/MM/yyyy}'}" />
+
+                    <Label Text="Data de Término:" TextColor="#f6c467" />
+                    <Label Text="{Binding DataTermino, StringFormat='{0:dd/MM/yyyy}'}" />
+
+                    <Label Text="Duração do Evento (em dias):" TextColor="#f6c467" />
+                    <Label Text="{Binding DuracaoEvento}" />
+
+                    <Label Text="Número de Participantes:" TextColor="#f6c467" />
+                    <Label Text="{Binding NumeroParticipantes}" />
+
+                    <Label Text="Local do Evento:" TextColor="#f6c467" />
+                    <Label Text="{Binding Local}" />
+
+                    <Label Text="Custo por Participante:" TextColor="#f6c467" />
+                    <Label Text="{Binding CustoPorParticipante, StringFormat='R${0:F2}'}" />
+
+                    <Label Text="Custo Total do Evento:" TextColor="#f6c467" />
+                    <Label Text="{Binding CustoTotal, StringFormat='R${0:F2}'}" />
+                </VerticalStackLayout>
+            </Frame>
+        </VerticalStackLayout>
+    </ScrollView>
+</ContentPage>

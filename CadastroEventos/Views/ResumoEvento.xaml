@@ -5,9 +5,6 @@
              x:Class="CadastroEventos.Views.ResumoEvento"
              BackgroundColor="{DynamicResource PageBackgroundColor}">
 
-    <ContentPage.BindingContext>
-        <model:Evento />
-    </ContentPage.BindingContext>
 
     <ScrollView>
         <VerticalStackLayout VerticalOptions="Center"
@@ -28,11 +25,11 @@
                     <Label Text="{Binding Nome}"/>
 
                     <Label Text="Data de Início:" TextColor="#f6c467" />
-                    <Label Text="{Binding DataInicio, StringFormat='{0:dd/MM/yyyy}'}" />
-
+                    <Label x:Name="LabelDataInicio" Text="{Binding DataInicio}" />
+                    
                     <Label Text="Data de Término:" TextColor="#f6c467" />
-                    <Label Text="{Binding DataTermino, StringFormat='{0:dd/MM/yyyy}'}" />
-
+                    <Label x:Name="LabelDataTermino" Text="{Binding DataTermino}"/>
+                    
                     <Label Text="Duração do Evento (em dias):" TextColor="#f6c467" />
                     <Label Text="{Binding DuracaoEvento}" />
 
@@ -47,8 +44,18 @@
 
                     <Label Text="Custo Total do Evento:" TextColor="#f6c467" />
                     <Label Text="{Binding CustoTotal, StringFormat='R${0:F2}'}" />
+
+                    <Button Text="Voltar"
+                            HorizontalOptions="Center"
+                            WidthRequest="200"
+                            Margin="30"
+                            Clicked="OnButtonVoltarClicked"
+                            BackgroundColor="#f6c467"/>
+                    
                 </VerticalStackLayout>
             </Frame>
+
+
         </VerticalStackLayout>
     </ScrollView>
 </ContentPage>

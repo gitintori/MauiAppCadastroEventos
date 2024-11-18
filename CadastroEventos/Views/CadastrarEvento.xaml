@@ -38,8 +38,11 @@
                     <HorizontalStackLayout Spacing="10">
                         <Label Text="Data de término:" />
                         <DatePicker x:Name="dtpck_dataTermino"
+                                    DateSelected="dtpck_dataTermino_DateSelected"
                                     Format="dd/MM/yyyy" />
                     </HorizontalStackLayout>
+
+                    <Label x:Name="lblDuracaoEvento" TextColor="#b67c58"/>
 
                     <Label Text="Número de Participantes:" />
                     <Entry Keyboard="Numeric" Text="{Binding NumeroParticipantes}" Placeholder="Digite o número de participantes" />
